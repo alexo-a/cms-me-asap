@@ -82,12 +82,15 @@ router.get('/post/:id', (req, res) => {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
             }
-
+            
             const post = dbPostData.get({ plain: true });
+            console.log(req.session.username + "\n\n" + post.user.username)
 
+            const userOwns = req.session.username === post.user.username;
             // pass data to template
              res.render('single-post', {
                 post,
+                owningUser: userOwns,
                 loggedIn: req.session.loggedIn
             }); 
         })

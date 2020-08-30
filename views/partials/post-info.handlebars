@@ -1,10 +1,11 @@
 <article class="post">
     <div class="title">
-        <a href="/dashboard/edit/{{id}}" target="_blank">{{title}}</a> <span class="posted-by">Posted by {{user.username}} on {{format_date created_at}}</span>
+        {{!--<a href="/dashboard/edit/{{id}}">{{title}}</a>--}}
+        <a href="/post/{{id}}">{{title}}</a>
+        <span class="posted-by">Posted by {{user.username}} on {{format_date created_at}}</span>
         
     </div>
     <div class="meta">
         {{post_body}}
-        {{!-- <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a> --}}
     </div>
 </article>

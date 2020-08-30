@@ -45,12 +45,12 @@ router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({where: {id : req.params.id}})
         .then(dbPostData => {
             const post = dbPostData.get({ plain: true });
-
+            const userOwns = req.session.user_id === post.user_id;
             res.render('edit-post', {
                 post,
-                loggedIn: true
+                loggedIn: true,
+                owningUser: userOwns
             });
         })
-
 })
 module.exports = router;

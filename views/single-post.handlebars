@@ -5,7 +5,7 @@
         Edit Post
     </h2>
     <form class="edit-post-form">
-        <div>
+        <div class="greentext">
             <div>Post Title</div>
             <input name="post-title" type="text" value="{{post.title}}" />
             <span>({{format_url post.post_url}})</span>
@@ -24,13 +24,16 @@
         <button type="submit">Save post</button>
         <button type="button" class="delete-post-btn">Delete post</button>
     </form>
-    
+
 </article>
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
 {{else}}
 <article class="post">
     <div class="title">
-        <a href="/" target="_blank">{{title}}</a> <span class="posted-by">Posted by
-            {{user.username}} on {{format_date post.created_at}}</span>
+        <a href="/" target="_blank">{{post.title}}</a> 
+        <span class="posted-by">Posted by
+            {{post.user.username}} on {{format_date post.created_at}}</span>
 
     </div>
     <div class="meta">
@@ -38,7 +41,7 @@
     </div>
 </article>
 {{/if}}
-
+{{#if loggedIn}}
 <form class="comment-form">
     <div>
         <textarea name="comment-body"></textarea>
@@ -47,7 +50,8 @@
         <button type="submit">Add Comment</button>
     </div>
 </form>
-{{> comments post.comments}}
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>
+{{/if}}
+{{> comments post.comments}}
+
+
