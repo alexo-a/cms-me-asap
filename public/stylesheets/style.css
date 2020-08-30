@@ -2,17 +2,20 @@
   --color-green: #e6ffe6;
   --color-brown: #331a00;
 }
+
 body {
     margin: 0;
 }
+
 * {
     background-color: var(--color-green);
     font-family: Arial, Helvetica, sans-serif;
 }
+
 nav {
-    background-color: var(--color-brown);
-    
+    background-color: var(--color-brown);  
 }
+
 nav a {
     margin: 20px;
     background-color: var(--color-brown);
@@ -23,6 +26,7 @@ header {
     background-color: var(--color-brown);
     padding: 10px ;
 }
+
 h1 {
    display: table;
    width: auto;
@@ -30,23 +34,27 @@ h1 {
    padding: 3px; /* adjust as needed */
    border: 5px solid var(--color-green);
    border-radius: 5px;
-
 }
+
 h1 a {
     color: var(--color-brown);
 }
-.post-list {
+
+ul {
     margin: 10px 50px 10px 5px;
     list-style-type: none;
 }
+
 .meta {
     color: var(--color-brown);
     padding: 10px;
 }
-article {
+
+article, section {
     border: 5px solid var(--color-brown);
     margin-bottom: 10px;
 }
+
 .posted-by{
     float: right;
 }
@@ -55,13 +63,37 @@ article .title, article .title a, article .title span{
     background-color: var(--color-brown);
     color: var(--color-green);
 }
+
 article .title {
     padding: 8px;
 }
+
 main {
     min-height: 85vh;
 }
 
 a {
     text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+}
+.new-post-form {
+    text-align: center;
+}
+div #post-body {
+    height: 30vh;
+    width: 50%;
+}
+
+#logout{
+    background-color: var(--color-brown);
+    border: none;
+    color: var(--color-green);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; 
 }
