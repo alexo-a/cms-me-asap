@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'post_url',
+            'post_body',
             'title',
             'created_at'
         ],
@@ -45,7 +46,8 @@ router.get('/:id', (req, res) => {
             'id',
             'post_url',
             'title',
-            'created_at'
+            'created_at',
+            'post_body'
         ],
         include: [
             {
@@ -81,7 +83,8 @@ router.post('/', /*withAuth,*/(req, res) => {
         title: req.body.title,
         post_url: req.body.post_url,
         //user_id: req.session.user_id  TODO replace line below with this one
-        user_id: req.body.user_id
+        user_id: req.body.user_id,
+        post_body: req.body.post_body
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
@@ -93,7 +96,8 @@ router.post('/', /*withAuth,*/(req, res) => {
 router.put('/:id', /*withAuth,*/ (req, res) => {
     Post.update(
         {
-            title: req.body.title
+            title: req.body.title,
+            post_body: req.body.post_body
         },
         {
             where: {
