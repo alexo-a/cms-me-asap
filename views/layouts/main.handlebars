@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMS me ASAP</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="shortcut icon" href="#" />
 </head>
 
 <body>
@@ -20,11 +21,11 @@
             {{/if}}
         </nav>
         <h1>
-            <!--{{#if dashboardMode}}-->
+            {{#if loggedIn}}
             <a href="/">Dashboard</a>
-            <!--{{else}}-->
+            {{else}}
             <a href="/">CMS me ASAP</a>
-            <!-- {{/if}}-->
+            {{/if}}
         </h1>
     </header>
 
