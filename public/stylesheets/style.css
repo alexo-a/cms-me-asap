@@ -1,6 +1,6 @@
 :root {
   --color-green: #e6ffe6;
-  --color-brown: #331a00;
+  --color-brown: hsl(30, 100%, 7%)
 }
 
 body {
@@ -66,6 +66,7 @@ article .title, article .title a, article .title span{
 
 article .title {
     padding: 8px;
+    font-weight: bold;
 }
 
 main {
@@ -76,14 +77,21 @@ a {
     text-decoration: none;
 }
 
-h2 {
+h2, h5, .create-post-title {
     text-align: center;
+    color: var(--color-brown);
 }
+
+.create-post-title {
+    font-weight: bold;
+}
+
 .new-post-form {
     text-align: center;
 }
+
 div #post-body {
-    height: 30vh;
+    height: 20vh;
     width: 50%;
 }
 
@@ -97,9 +105,77 @@ div #post-body {
     display: inline-block;
     font-size: 16px; 
 }
+
 .greentext{
     color: var(--color-green);
 }
+
 .browntext{
     color: var(--color-brown);
+}
+
+.edit-post-form button, .new-post-form button{
+    background-color: var(--color-brown);
+    color: var(--color-green);
+       border: 5px solid var(--color-brown);
+   border-radius: 5px;
+   padding: 10px;
+   margin: 10px 10px;
+}
+
+.dashboard-section {
+    margin: 20px 30px;
+}
+
+textarea{
+    resize: none;
+    border: 2px solid var(--color-brown);
+}
+
+#post-title{
+    border: 2px solid var(--color-brown);
+}
+
+#login-flexbox{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+#login-flexbox form{
+    text-align: center;
+    font-size: 1.6em;
+    width: 50%;
+}
+.signup-form div p,
+.login-form div p {
+    margin: 10px;
+}
+
+#right-form {
+    padding: auto 20px;
+
+    border-left: 5px solid var(--color-brown)
+}
+.signup-form div button ,
+.login-form div button,
+.comment-form div button {
+        background-color: var(--color-brown);
+    color: var(--color-green);
+       border: 5px solid var(--color-brown);
+   border-radius: 5px;
+   padding: 10px;
+   margin: 10px 10px;
+   font-weight: bolder;
+}
+
+#login-flexbox form div input {
+    font-size: 1em;
+}
+.edit-post-form, .comment-form{
+    text-align: center;
+}
+
+#edit-post-body {
+    resize: none;
+    border: 2px solid var(--color-brown);
 }

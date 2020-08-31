@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
             'id',
-            'post_url',
             'title',
             'created_at',
             'post_body'
@@ -57,7 +56,6 @@ router.get('/post/:id', (req, res) => {
         },
         attributes: [
             'id',
-            'post_url',
             'title',
             'created_at',
             'post_body'
@@ -84,7 +82,6 @@ router.get('/post/:id', (req, res) => {
             }
             
             const post = dbPostData.get({ plain: true });
-            console.log(req.session.username + "\n\n" + post.user.username)
 
             const userOwns = req.session.username === post.user.username;
             // pass data to template

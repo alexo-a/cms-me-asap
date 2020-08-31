@@ -1,5 +1,5 @@
 async function signupFormHandler(event) {
-    event.preventDefault();
+    //event.preventDefault();
     console.log("creating user profile...")
     const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
@@ -15,6 +15,8 @@ async function signupFormHandler(event) {
         // check the response status (replaces commented-out in line above)
         if (response.ok) {
             console.log('success');
+            document.location.replace('/');
+            location.reload();
         } else {
             alert(response.statusText);
         }
@@ -24,7 +26,7 @@ async function signupFormHandler(event) {
     }
 }
 async function loginFormHandler(event) {
-    event.preventDefault();
+    //event.preventDefault();
 
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
@@ -40,7 +42,8 @@ async function loginFormHandler(event) {
         })
         // check the response status
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.assign('/');
+            location.reload();
         } else {
             alert(response.statusText);
         }
