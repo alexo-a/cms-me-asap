@@ -1,4 +1,5 @@
 {{#if owningUser}}
+</br>
 <article>
     <a href="/dashboard"> &larr; Back to dashboard</a>
     <h2>
@@ -29,6 +30,7 @@
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
 {{else}}
+</br></br>
 <article class="post">
     <div class="title">
         <a href="/" target="_blank">{{post.title}}</a> 
@@ -52,6 +54,8 @@
 </form>
 <script src="/javascript/comment.js"></script>
 {{/if}}
+</br>
+<h3 class="browntext">Comments</h3>
 {{> comments post.comments}}
 
 
